@@ -1,7 +1,7 @@
 let playerMove = '';
 let computerTurn = '';
 let finalResult = '';
-let count = {
+let count =JSON.parse(localStorage.getItem('count')) || {
         win : 0,
         loose : 0,
         tie : 0 
@@ -70,6 +70,7 @@ function counting(){
     }else if(finalResult == 'Tie'){
         count.tie += 1;
     }
+    localStorage.setItem('count', JSON.stringify(count));
 }
 
 function resetScore(){
@@ -79,4 +80,5 @@ function resetScore(){
     document.querySelector(".resultCount").innerText = 
      `Wins: ${count.win} | Losses: ${count.loose} | Tie: ${count.tie}`
      ;
+     localStorage.setItem('count', JSON.stringify(count));
 }
