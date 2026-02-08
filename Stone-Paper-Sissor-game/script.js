@@ -10,8 +10,8 @@ let count = {
 function displayResult(){
     computerMove();
     document.querySelector(".resultText").innerHTML =
-     `<p>You: <img src="../images/${playerMove}-emoji.png" alt=""> | 
-     Computer: <img src="../images/${computerTurn}-emoji.png" alt=""> | 
+     `<p>You: <img src="../images/${playerMove}-emoji.png" alt="">  
+     Computer: <img src="../images/${computerTurn}-emoji.png" alt="">
      Result: ${finalResult}</p>`
      ;
 
@@ -70,4 +70,13 @@ function counting(){
     }else if(finalResult == 'Tie'){
         count.tie += 1;
     }
+}
+
+function resetScore(){
+    count.win = 0;
+    count.loose = 0;
+    count.tie = 0;
+    document.querySelector(".resultCount").innerText = 
+     `Wins: ${count.win} | Losses: ${count.loose} | Tie: ${count.tie}`
+     ;
 }
