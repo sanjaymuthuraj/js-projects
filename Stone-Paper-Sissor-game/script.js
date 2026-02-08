@@ -1,11 +1,22 @@
 let playerMove = '';
 let computerTurn = '';
 let finalResult = '';
+let count = {
+        win : 0,
+        loose : 0,
+        tie : 0 
+    }
 
 function displayResult(){
     computerMove();
-    document.querySelector(".resultText").innerText =
-     ` You :${playerMove} | Computer:${computerTurn} | Result:${finalResult}`
+    document.querySelector(".resultText").innerHTML =
+     `<p>You: <img src="../images/${playerMove}-emoji.png" alt=""> | 
+     Computer: <img src="../images/${computerTurn}-emoji.png" alt=""> | 
+     Result: ${finalResult}</p>`
+     ;
+
+     document.querySelector(".resultCount").innerText = 
+     `Wins: ${count.win} | Losses: ${count.loose} | Tie: ${count.tie}`
      ;
 }
 
@@ -20,6 +31,7 @@ function computerMove(){
         computerTurn = 'Sissor';
     }
     resultCalculation();
+    counting();
 }
 
 function resultCalculation(){
@@ -48,5 +60,14 @@ function resultCalculation(){
             finalResult = 'Tie';
         }
     }
-    console.log(finalResult);
+}
+
+function counting(){
+    if(finalResult == 'Win'){
+        count.win += 1;
+    }else if(finalResult == 'Loose'){
+        count.loose += 1;
+    }else if(finalResult == 'Tie'){
+        count.tie += 1;
+    }
 }
