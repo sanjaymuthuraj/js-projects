@@ -3,13 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock-Paper-Sissor</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="main-container">
-        
-    </div>
+    <h1>Rock Paper Sissor Game</h1>
+
+    <button onclick="
+        playerMove = 'Rock'; 
+        displayResult();
+    ">Rock</button>
+
+    <button onclick="
+        playerMove = 'Paper';
+        displayResult();"
+    >Paper</button>
+
+    <button onclick="
+        playerMove = 'Sissor';
+        displayResult();
+    ">Sissor</button>
+
+    <p class="resultText"></p>
 </body>
 </html>
