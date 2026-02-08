@@ -10,25 +10,19 @@
 <body>
     <h1>Rock Paper Sissor Game</h1>
     <p class="resultText"></p>
-    <button onclick="
-        playerMove = 'Rock'; 
-        displayResult();
-    ">Rock</button>
 
-    <button onclick="
-        playerMove = 'Paper';
-        displayResult();"
-    >Paper</button>
+    <button class="rock-button">Rock</button>
 
-    <button onclick="
-        playerMove = 'Sissor';
-        displayResult();
-    ">Sissor</button>
+    <button class="paper-button">Paper</button>
 
-    <button onclick="
-        resetScore();
-    ">Reset Score</button>
+    <button class="sissor-button">Sissor</button>
 
-    <p class="resultCount"></p>
+    <button class="reset-button">Reset Score</button>
+
+    <p class="resultCount">
+        Wins: <span class="winSpan"></span> 
+        Loose: <span class="looseSpan"></span> 
+        Tie: <span class="tieSpan"></span>
+    </p>
 </body>
 </html>

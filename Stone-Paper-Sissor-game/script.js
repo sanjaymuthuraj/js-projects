@@ -7,23 +7,23 @@ let count =JSON.parse(localStorage.getItem('count')) || {
         tie : 0 
     }
 
+countfunction();
+
+
 function displayResult(){
     computerMove();
     document.querySelector(".resultText").innerHTML =
      `<p>You: <img src="../images/${playerMove}-emoji.png" alt="">  
      Computer: <img src="../images/${computerTurn}-emoji.png" alt="">
-     Result: ${finalResult}</p>`
-     ;
+     Result: ${finalResult}</p>`;
 
-     document.querySelector(".resultCount").innerText = 
-     `Wins: ${count.win} | Losses: ${count.loose} | Tie: ${count.tie}`
-     ;
+    countfunction();
 }
 
 function computerMove(){
     let randomValue = Math.random();
 
-    if(randomValue >=0 && randomValue <= 1/3){
+    if(randomValue <= 1/3){
         computerTurn = 'Rock';
     }else if(randomValue > 1/3 && randomValue <= 2/3){
         computerTurn = 'Paper';
@@ -77,8 +77,31 @@ function resetScore(){
     count.win = 0;
     count.loose = 0;
     count.tie = 0;
-    document.querySelector(".resultCount").innerText = 
-     `Wins: ${count.win} | Losses: ${count.loose} | Tie: ${count.tie}`
-     ;
-     localStorage.setItem('count', JSON.stringify(count));
+    localStorage.setItem('count', JSON.stringify(count));
+    countfunction();
 }
+
+function countfunction(){
+    document.querySelector(".winSpan").innerText = `${count.win}`;
+    document.querySelector(".looseSpan").innerText = `${count.loose}`;
+    document.querySelector(".tieSpan").innerText = `${count.tie}`;
+}
+
+document.querySelector('.rock-button').addEventListener("click",()=>{
+    playerMove = 'Rock'; 
+    displayResult();
+})
+
+document.querySelector('.paper-button').addEventListener("click",()=>{
+    playerMove = 'Paper'; 
+    displayResult();
+})
+
+document.querySelector('.sissor-button').addEventListener("click",()=>{
+    playerMove = 'Sissor'; 
+    displayResult();
+})
+
+document.querySelector('.reset-button').addEventListener('click', ()=>{
+    resetScore();
+})
