@@ -14,9 +14,9 @@ function displayResult(){
     computerMove();
     document.querySelector(".resultText").innerHTML =
      `<p>You: <img src="../images/${playerMove}-emoji.png" alt="">  
-     Computer: <img src="../images/${computerTurn}-emoji.png" alt="">
-     Result: ${finalResult}</p>`;
-
+     Computer: <img src="../images/${computerTurn}-emoji.png" alt=""></p>`;
+    
+    document.querySelector('.finalRes').innerHTML = `<p>Result: ${finalResult}</p>`
     countfunction();
 }
 
@@ -79,6 +79,8 @@ function resetScore(){
     count.tie = 0;
     localStorage.setItem('count', JSON.stringify(count));
     countfunction();
+    document.querySelector('.resultText').innerHTML = null;
+    document.querySelector('.finalRes').innerHTML = null;
 }
 
 function countfunction(){
@@ -89,7 +91,7 @@ function countfunction(){
 
 document.querySelector('.rock-button').addEventListener("click",()=>{
     playerMove = 'Rock'; 
-    displayResult();
+    displayResult(); 
 })
 
 document.querySelector('.paper-button').addEventListener("click",()=>{

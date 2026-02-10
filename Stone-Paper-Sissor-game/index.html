@@ -8,18 +8,25 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>Rock Paper Sissor Game</h1>
-    <p class="resultText"></p>
-
-    <button class="rock-button">Rock</button>
-    <button class="paper-button">Paper</button>
-    <button class="sissor-button">Sissor</button>
-    <button class="reset-button">Reset Score</button>
-
-    <p class="resultCount">
-        Wins: <span class="winSpan"></span> 
-        Loose: <span class="looseSpan"></span> 
-        Tie: <span class="tieSpan"></span>
-    </p>
+    <div class="main-container">
+        <h1>Rock Paper Scissor Game</h1>
+        <div class="result-container">
+            <p class="resultText"></p>
+            <p class="finalRes"></p>
+        </div>
+        <div class="button-container">
+            <button class="rock-button">Rock</button>
+            <button class="paper-button">Paper</button>
+            <button class="sissor-button">Sissor</button>
+            <button class="reset-button">Reset Score</button>
+        </div>
+        <div class="count-container">
+            <p class="resultCount">
+                Wins: <span class="winSpan"></span> |
+                Loose: <span class="looseSpan"></span> | 
+                Tie: <span class="tieSpan"></span>
+            </p>
+        </div>
+    </div>
 </body>
 </html>
