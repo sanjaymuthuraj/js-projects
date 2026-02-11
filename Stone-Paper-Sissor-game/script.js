@@ -9,7 +9,6 @@ let count =JSON.parse(localStorage.getItem('count')) || {
 
 countfunction();
 
-
 function displayResult(){
     computerMove();
     document.querySelector(".resultText").innerHTML =
